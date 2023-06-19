@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Height Calculator | Prank</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100vh;
+        min-width: 100%;
+        overflow: hidden;
+      }
+
+      #form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="height">Enter you height:</label>
+      <input
+        id="height"
+        name="height"
+        type="number"
+        class="height"
+        placeholder="e.g 184 (cm)"
+        required
+        min="0"
+      />
+      <button type="submit">Calculate Height</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("#form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert(`Your height is: ${e.target.height.value}cm`);
+      });
+    </script>
+  </body>
+</html>
